@@ -5,4 +5,5 @@
     <dimen name="imgWidth">300dp</dimen>
     <dimen name="imgHeight">300dp</dimen>
     <dimen name="title_size">30sp</dimen>
+    <dimen name="titleOverViewHeight">300dp</dimen>
 </resources>
