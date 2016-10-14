@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mMovieApi= RetrofitUtils.get(getString(R.string.api_key)).create(MovieApi.class);
         lvMovie = (ListView) findViewById(R.id.lvMovie);
+        mMovieApi= RetrofitUtils.get(getString(R.string.api_key)).create(MovieApi.class);
         mMovieApi.getNowPlaying().enqueue(new Callback<NowPlaying>() {
             @Override
             public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {

@@ -2,6 +2,8 @@ package coderschool.movielist.activity.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import coderschool.movielist.activity.utils.Constant;
+
 public class Movie  {
 
     @SerializedName("title")
@@ -22,10 +24,10 @@ public class Movie  {
     }
 
     public String getPosterPath() {
-        return posterPath;
+        return Constant.IMG_URL + posterPath;
     }
 
     public String getBackdropPath() {
-        return backdropPath;
+        return Constant.IMG_URL + backdropPath;
     }
 }

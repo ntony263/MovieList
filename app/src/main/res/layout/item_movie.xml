@@ -25,13 +25,17 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvTitle"
             tools:text="Rush Hour 3"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
             android:textColor="@color/textWhite"
             android:textSize="@dimen/title_size"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:textColor="@color/textWhite"
+            android:textSize="@dimen/overview_size"
             tools:text="After an attempted assassination on Ambassador Han, Inspector Lee and Detective Carter are back in action as they head to Paris to protect a French woman with knowledge of the Triads' secret leaders. Lee also holds secret meetings with a United Nations authority, but his personal struggles with a Chinese criminal mastermind named Kenji, which reveals that it's Lee's long-lost...brother."
             android:id="@+id/tvOverview"/>
 
