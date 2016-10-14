@@ -1,4 +1,4 @@
-package api;
+package coderschool.movielist.activity.api;
 
 
 import coderschool.movielist.activity.model.NowPlaying;
@@ -8,6 +8,4 @@ import retrofit2.http.GET;
 public interface MovieApi {
     @GET("now_playing")
     Call<NowPlaying> getNowPlaying();
-
-
 }

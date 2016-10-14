@@ -11,21 +11,21 @@ public class Movie  {
     @SerializedName("poster_path")
     private String posterPath;
     @SerializedName("backdrop_path")
-    private String backdropPath
+    private String backdropPath;
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getTitle() {
+        return title;
     }
 
-    public void setOverview(String overview) {
-        this.overview = overview;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
+    public String getPosterPath() {
+        return posterPath;
     }
 
-    public void setBackdropPath(String backdropPath) {
-        this.backdropPath = backdropPath;
+    public String getBackdropPath() {
+        return backdropPath;
     }
 }

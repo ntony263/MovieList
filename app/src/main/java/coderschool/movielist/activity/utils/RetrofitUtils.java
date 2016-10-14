@@ -1,8 +1,7 @@
-package utils;
+package coderschool.movielist.activity.utils;
 
 import java.io.IOException;
 
-import coderschool.movielist.R;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -11,42 +10,37 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static utils.Constant.BASE_URL;
+import static coderschool.movielist.activity.utils.Constant.BASE_URL;
 
 public class RetrofitUtils {
-       public static Retrofit get(){
+       public static Retrofit get (String apiKey){
           return new Retrofit.Builder()
-                  .baseUrl(BASE_URL)
-                  .client(client)
+                  .baseUrl(Constant.BASE_URL)
+                  .client(client(apiKey))
                   .addConverterFactory(GsonConverterFactory.create())
                   .build();
        }
 
-    private static OkHttpClient client () {
+    private static OkHttpClient client (String apiKey) {
         return new OkHttpClient.Builder()
-                .addInterceptor(apiKeyInterceptor())
+                .addInterceptor(apiKeyInterceptor(apiKey))
                 .build();
     }
 
-    private static Interceptor apiKeyInterceptor(){
+    private static Interceptor apiKeyInterceptor(final String apiKey){
         return new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request();
                 HttpUrl url = request.url()
                         .newBuilder()
-                        .addQueryParameter("api_key", Constant.API_KEY)
+                        .addQueryParameter("api_key", apiKey)
                         .build();
                 request = request.newBuilder()
                         .url(url)
                         .build();
                 return chain.proceed(request);
             }
-        }
+        };
     }
-
-
-
-
-
 }
