@@ -8,4 +8,8 @@ import retrofit2.http.GET;
 public interface MovieApi {
     @GET("now_playing")
     Call<NowPlaying> getNowPlaying();
+
+
+    @GET("popular")
+    Call<NowPlaying> getPopular();
 }

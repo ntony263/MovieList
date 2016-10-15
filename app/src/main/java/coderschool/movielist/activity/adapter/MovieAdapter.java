@@ -64,11 +64,13 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
         if (configuration.orientation== Configuration.ORIENTATION_PORTRAIT){
             Glide.with(getContext())
                     .load(movie.getPosterPath())
+                    .placeholder(R.drawable.placeholder)
                     .into(viewHolder.ivCover);
         }
         else {
             Glide.with(getContext())
                     .load(movie.getBackdropPath())
+                    .placeholder(R.drawable.placeholder)
                     .into(viewHolder.ivCover);
         }
         return convertView;
@@ -80,5 +82,4 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
         public TextView tvOverview;
         public ImageView ivCover;
     }
-
 }
