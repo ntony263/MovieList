@@ -12,7 +12,7 @@
         android:layout_height="@dimen/imgHeight"
         android:layout_weight="1"
         android:id="@+id/imMovie"
-        android:scaleType="centerCrop"
+
         tools:src="@drawable/sample"
         />
     <LinearLayout

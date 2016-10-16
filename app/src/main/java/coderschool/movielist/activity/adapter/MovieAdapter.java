@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,15 +63,19 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
         Configuration configuration = getContext().getResources().getConfiguration();
 
         if (configuration.orientation== Configuration.ORIENTATION_PORTRAIT){
+            viewHolder.ivCover.setScaleType(ImageView.ScaleType.FIT_CENTER);
             Glide.with(getContext())
                     .load(movie.getPosterPath())
-                    .placeholder(R.drawable.placeholder)
+                    .placeholder(R.drawable.placeholder_gif)
                     .into(viewHolder.ivCover);
         }
         else {
+            viewHolder.ivCover.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            Log.d("IMG", movie.getTitle() + " "+movie.getBackdropPath());
+
             Glide.with(getContext())
                     .load(movie.getBackdropPath())
-                    .placeholder(R.drawable.placeholder)
+                    .placeholder(R.drawable.placeholder_gif)
                     .into(viewHolder.ivCover);
         }
         return convertView;

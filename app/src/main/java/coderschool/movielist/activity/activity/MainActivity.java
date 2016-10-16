@@ -4,11 +4,16 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.util.List;
 
 import coderschool.movielist.R;
 import coderschool.movielist.activity.adapter.MovieAdapter;
 import coderschool.movielist.activity.api.MovieApi;
+import coderschool.movielist.activity.model.Movie;
 import coderschool.movielist.activity.model.NowPlaying;
 import coderschool.movielist.activity.utils.RetrofitUtils;
 import retrofit2.Call;
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lvMovie;
     private MovieApi mMovieApi;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    private List<Movie> mMovie;
 
 
     @Override
@@ -32,8 +38,20 @@ public class MainActivity extends AppCompatActivity {
         retrofitGetData();
         fetchMovieNowPlaying();
         onSwipetoRefreshListener();
+        onMovieItemCLickListener ();
 
 
+    }
+
+    private void onMovieItemCLickListener() {
+        lvMovie.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                    }
+                }
+        );
     }
 
 
@@ -42,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<NowPlaying> call, Response<NowPlaying> response) {
                 Log.d("Response", String.valueOf(response.isSuccessful()));
+                mMovie = response.body().getMovies();
                 lvMovie.setAdapter(new MovieAdapter(MainActivity.this, response.body().getMovies()));
             }
 
