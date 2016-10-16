@@ -9,4 +9,8 @@
     <dimen name="titleOverViewHeight">300dp</dimen>
     <dimen name="padding_bw_item">20sp</dimen>
     <dimen name="padding_text_to_picture">20sp</dimen>
+    <dimen name="dialog_title_size">40sp</dimen>
+    <dimen name="dialog_overview_size">25sp</dimen>
+    <dimen name="dialog_rating_size">25sp</dimen>
+    <dimen name="dialog_popularity_size">25sp</dimen>
 </resources>

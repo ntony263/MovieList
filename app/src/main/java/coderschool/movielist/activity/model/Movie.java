@@ -14,6 +14,10 @@ public class Movie  {
     private String posterPath;
     @SerializedName("backdrop_path")
     private String backdropPath;
+    @SerializedName("popularity")
+    private String popularity;
+    @SerializedName("vote_average")
+    private String rating;
 
     public String getTitle() {
         return title;
@@ -29,5 +33,13 @@ public class Movie  {
 
     public String getBackdropPath() {
         return Constant.IMG_URL + backdropPath;
+    }
+
+    public String getPopularity() {
+        return popularity;
+    }
+
+    public String getRating() {
+        return rating;
     }
 }

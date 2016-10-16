@@ -10,7 +10,10 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static coderschool.movielist.activity.utils.Constant.BASE_URL;
+/*
+RetrofitUtils will do basic setting on retrofit
+so it can read the data from the movieDB API
+ */
 
 public class RetrofitUtils {
        public static Retrofit get (String apiKey){

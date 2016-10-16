@@ -19,6 +19,10 @@ import java.util.List;
 import coderschool.movielist.R;
 import coderschool.movielist.activity.model.Movie;
 
+/*
+Movie Adapter is to display movie list to the list view
+ */
+
 public class MovieAdapter extends ArrayAdapter<Movie> {
     private List<Movie> mMovie;
 
