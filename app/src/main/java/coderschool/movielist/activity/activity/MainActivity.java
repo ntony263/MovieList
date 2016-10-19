@@ -30,6 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static coderschool.movielist.R.id.lvMovie;
 import static coderschool.movielist.R.id.swipeContainer;
 
 public class MainActivity extends AppCompatActivity {
@@ -148,12 +149,9 @@ public class MainActivity extends AppCompatActivity {
             movieRating = (TextView) mView.findViewById(R.id.tvFragmentRating);
             moviePopularity = (TextView) mView.findViewById(R.id.tvFragmentPopularity);
 
-
             SpannableStringBuilder overviewFormat = formatStringColor("Overview: ",mMovie.getOverview());
             SpannableStringBuilder popularityFormat = formatStringColor("Popularity: ",mMovie.getPopularity());
             SpannableStringBuilder ratingFormat = formatStringColor("Rating: ",mMovie.getRating());
-
-
 
 
             movieTitle.setText(mMovie.getTitle());
